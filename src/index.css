@@ -1,0 +1,37 @@
+:root {
+  --bg: #f5f3ee; --card: #fff; --text: #29271f; --muted: #6a6457; --line: #e3dfd3;
+  --accent: #b8470f; --accent-soft: #f9e6d9; --a: #d9622b; --b: #1f6f8f; --sel: #111;
+  --err: #b42318; --err-soft: #fdecea; --gold: #f5b301;
+  --shadow: 0 2px 10px rgba(60, 40, 10, 0.08);
+  font: 15px/1.55 system-ui, 'Segoe UI', 'Malgun Gothic', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17160f; --card: #211f17; --text: #ece8de; --muted: #aaa393; --line: #38352a;
+    --accent: #f0955a; --accent-soft: #3a2a1d; --a: #f0955a; --b: #62b6d6; --sel: #fff;
+    --err: #ff8a7a; --err-soft: #3b1f1b; --shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+body.lock { overflow: hidden; }
+
+h1 { margin: 0; font-size: 24px; }
+mark { background: #ffe58a; color: #29271f; border-radius: 3px; padding: 0 1px; }
+
+input, select, button {
+  font: inherit; color: var(--text); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; min-width: 0;
+}
+button { cursor: pointer; }
+button:hover { border-color: var(--accent); }
+button[aria-pressed='true'] { background: var(--accent-soft); border-color: var(--accent); font-weight: 600; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 3s !important; }
+}
